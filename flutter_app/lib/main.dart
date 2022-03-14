@@ -21,27 +21,12 @@ class _MyAppState extends State<MyApp> {
       ),
       home: Scaffold(
         body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Text("You have pushed the button this many times:"),
-              Text(
-                '$_counter',
-                style: Theme.of(context).textTheme.headline4,
-              )
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Image.asset('images/sample.jpeg')
             ],
           ),
         ),
-        floatingActionButton: FloatingActionButton(
-          tooltip: "increment",
-          onPressed: _incrementCounter,
-          child: Icon(Icons.add),
-        ),
       ));
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
 }
