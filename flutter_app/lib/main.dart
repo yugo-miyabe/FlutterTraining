@@ -20,8 +20,12 @@ class _MyAppState extends State<MyApp> {
       home: Scaffold(
         body: Center(
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [Image.asset('images/sample.jpeg')],
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Image.asset('images/sample_1.jpeg'),
+              Image.asset('images/sample_2.jpeg'),
+              Image.asset('images/sample_3.jpeg'),
+            ],
           ),
         ),
       ));
