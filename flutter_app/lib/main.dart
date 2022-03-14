@@ -6,19 +6,17 @@ void main() {
 
 class MyApp extends StatelessWidget {
   @override
-  Widget build(BuildContext context) =>
-      MaterialApp(
+  Widget build(BuildContext context) => MaterialApp(
       title: 'Flutter Demo',
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-        ),
-        home:Scaffold(
-          body: Center(
-            child: Text(
-              'Flutter Demo Home Page',
-              style: Theme.of(context).textTheme.headline4,
-            ),
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: Scaffold(
+        body: Center(
+          child: Text(
+            'Flutter Demo Home Page',
+            style: Theme.of(context).textTheme.headline4,
           ),
-        )
-      );
+        ),
+      ));
 }
