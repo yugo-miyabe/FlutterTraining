@@ -11,8 +11,6 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  int _counter = 0;
-
   @override
   Widget build(BuildContext context) => MaterialApp(
       title: 'Flutter Demo',
@@ -23,9 +21,7 @@ class _MyAppState extends State<MyApp> {
         body: Center(
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Image.asset('images/sample.jpeg')
-            ],
+            children: [Image.asset('images/sample.jpeg')],
           ),
         ),
       ));
