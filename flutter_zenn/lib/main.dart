@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
   runApp(MyApp());
@@ -32,6 +33,17 @@ class _MyHomePageState extends State<MyHomePage> {
     setState(() {
       _counter++;
     });
+    saveFlag(true);
+  }
+
+  saveFlag(bool flag) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.setBool('FLAG', flag);
+  }
+
+  loadFlag() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    return prefs.get('FLAG') ?? false;
   }
 
   @override
