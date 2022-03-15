@@ -13,9 +13,13 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: Scaffold(
-        appBar: AppBar(title: Text("Flutter Demo")),
-        body: Text("初めてのテキスト"),
-      ),
+          appBar: AppBar(title: Text("Flutter Demo")),
+          body: Column(
+            children: [
+              Text("初めてのテキスト"),
+              Text("2番目ののテキスト"),
+            ],
+          )),
     );
   }
 }
