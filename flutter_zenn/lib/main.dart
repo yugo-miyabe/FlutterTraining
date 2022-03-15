@@ -18,6 +18,7 @@ class MyApp extends StatelessWidget {
             children: [
               Text("初めてのテキスト"),
               Text("2番目ののテキスト"),
+              TextButton(child: Text("更新"), onPressed: () => {print("ボタン押下")})
             ],
           )),
     );
