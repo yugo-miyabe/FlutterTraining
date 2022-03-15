@@ -27,6 +27,10 @@ class MyApp extends StatelessWidget {
           ),
         ),
         body: Text("初めてのテキスト"),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () => {print("押下")},
+          child: Icon(Icons.timer),
+        ),
       ),
     );
   }
