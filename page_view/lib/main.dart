@@ -40,12 +40,14 @@ class _MyHomePageState extends State<MyHomePage> {
     TestPage3(),
   ];
 
+  /// オブジェクトがツリーに挿入されたときに呼び出されます。
   @override
   void initState() {
     super.initState();
     _pageController = PageController(initialPage: _selectedIndex);
   }
 
+  /// オブジェクトがツリーから完全に削除されたときに呼び出されます。
   @override
   void dispose() {
     super.dispose();
