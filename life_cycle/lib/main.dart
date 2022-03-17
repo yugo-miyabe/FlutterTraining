@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:life_cycle/DummyPage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -28,50 +27,49 @@ class MyHomePage extends StatefulWidget {
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      print("call setState");
-      _counter++;
-    });
-    nextpage();
+class _MyHomePageState extends State<MyHomePage> with WidgetsBindingObserver {
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance!.addObserver(this);
   }
 
-  // ダミーで画面遷移を行う
-  void nextpage() async {
-    {
-      // ダミー画面へ遷移
-      await Navigator.of(context)
-          .pushReplacement(MaterialPageRoute(builder: (context) {
-        return DummyPage();
-      }));
+  @override
+  void dispose() {
+    print("dispose");
+    WidgetsBinding.instance!.removeObserver(this);
+    super.dispose();
+  }
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    print("stete = $state");
+    switch (state) {
+      case AppLifecycleState.inactive:
+        print('非アクティブになったときの処理');
+        break;
+      case AppLifecycleState.paused:
+        print('停止されたときの処理');
+        break;
+      case AppLifecycleState.resumed:
+        print('再開されたときの処理');
+        break;
+      case AppLifecycleState.detached:
+        print('破棄されたときの処理');
+        break;
     }
   }
 
-  /// Widgetツリーの初期化を行う
-  /// 一度だけ呼ばれる
-  @override
-  void initState() {
-    print("call initState");
-    super.initState();
+  int _counter = 0;
+
+  _incrementCounter() {
+    setState(() {
+      _counter++;
+    });
   }
 
-  /// stateオブジェクトの依存関係が変更されたときに呼び出される
-  /// initStateの後に呼ばれるが、それ以外にも呼ばれることはある
-  @override
-  void didChangeDependencies() {
-    print("call didChangeDependencies");
-    super.didChangeDependencies();
-  }
-
-  /// Widgetで作られるUIを構築する
-  /// setState等で状態が変更されたときに呼ばれる
-  /// 変更がある部分ツリーを検知して置き換える
   @override
   Widget build(BuildContext context) {
-    print("call build");
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
@@ -80,7 +78,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text(
+            Text(
               'You have pushed the button this many times:',
             ),
             Text(
@@ -91,34 +89,10 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        key: Key('increment'),
         onPressed: _incrementCounter,
         tooltip: 'Increment',
-        child: const Icon(Icons.add),
+        child: Icon(Icons.add),
       ),
     );
-  }
-
-  /// ウィジェットの構成が変更されるたびに呼び出される
-  /// 親Widgetが変更され、再描画する必要があるときに呼び出される
-  /// oldWidgetパラメータを取得して比較する
-  @override
-  void didUpdateWidget(oldWidget) {
-    print("call didUpdateWidget");
-    super.didUpdateWidget(oldWidget);
-  }
-
-  /// stateオブジェクトがツリーから削除するたびに呼び出される
-  @override
-  void deactivate() {
-    print("call deactivate");
-    super.deactivate();
-  }
-
-  /// オブジェクトがツリーから完全に削除され、2度とビルドされなくなったら呼ばれる
-  @override
-  void dispose() {
-    print("call dispose");
-    super.dispose();
   }
 }
