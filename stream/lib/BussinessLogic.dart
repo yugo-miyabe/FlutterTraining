@@ -16,9 +16,8 @@ class Generator {
   generate() {
     var data = rand.nextInt(100);
     print("generatorが$dataを作ったよ");
-    var stream;
     //streamにデータを入れる場合は、sink.addでデータを入れるだけです。
-    stream.sink.add(data);
+    intStream.sink.add(data);
   }
 }
 

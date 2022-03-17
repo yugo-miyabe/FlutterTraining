@@ -40,7 +40,7 @@ class _MyHomePageState extends State<MyHomePage> {
   var stringStream = StreamController<String>();
 
   var generator = Generator();
-  var coodinator = Coordinator();
+  var coordinator = Coordinator();
   var consumer = Consumer();
 
   void _incrementCounter() {
@@ -54,9 +54,9 @@ class _MyHomePageState extends State<MyHomePage> {
   void initState() {
     super.initState();
     generator.init(intStream);
-    coodinator.init(intStream, stringStream);
+    coordinator.init(intStream, stringStream);
     consumer.init(stringStream);
-    coodinator.coordinate();
+    coordinator.coordinate();
     consumer.consume();
   }
 
