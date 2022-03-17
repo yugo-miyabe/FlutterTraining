@@ -49,6 +49,7 @@ class _MyHomePageState extends State<MyHomePage> {
       }));
     }
   }
+
   /// Widgetツリーの初期化を行う
   /// 一度だけ呼ばれる
   @override
@@ -57,12 +58,17 @@ class _MyHomePageState extends State<MyHomePage> {
     super.initState();
   }
 
+  /// stateオブジェクトの依存関係が変更されたときに呼び出される
+  /// initStateの後に呼ばれるが、それ以外にも呼ばれることはある
   @override
   void didChangeDependencies() {
     print("call didChangeDependencies");
     super.didChangeDependencies();
   }
 
+  /// Widgetで作られるUIを構築する
+  /// setState等で状態が変更されたときに呼ばれる
+  /// 変更がある部分ツリーを検知して置き換える
   @override
   Widget build(BuildContext context) {
     print("call build");
@@ -92,16 +98,24 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
     );
   }
+
+  /// ウィジェットの構成が変更されるたびに呼び出される
+  /// 親Widgetが変更され、再描画する必要があるときに呼び出される
+  /// oldWidgetパラメータを取得して比較する
   @override
   void didUpdateWidget(oldWidget) {
     print("call didUpdateWidget");
     super.didUpdateWidget(oldWidget);
   }
+
+  /// stateオブジェクトがツリーから削除するたびに呼び出される
   @override
   void deactivate() {
     print("call deactivate");
     super.deactivate();
   }
+
+  /// オブジェクトがツリーから完全に削除され、2度とビルドされなくなったら呼ばれる
   @override
   void dispose() {
     print("call dispose");
