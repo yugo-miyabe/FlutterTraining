@@ -36,8 +36,10 @@ class _MyHomePageState extends State<MyHomePage> {
 
   /// int型のStream
   var intStream = StreamController<int>();
+
+  // StreamControllerにbroadcastをつけて複数のlistenに対応させる
   /// String型のStream
-  var stringStream = StreamController<String>();
+  var stringStream = StreamController<String>.broadcast();
 
   var generator = Generator();
   var coordinator = Coordinator();
@@ -83,6 +85,21 @@ class _MyHomePageState extends State<MyHomePage> {
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.headline4,
+            ),
+            //　Streamの結果を表示
+            StreamBuilder<String>(
+              // stringStreamの値を監視
+              stream: stringStream.stream,
+              // 初期値
+              initialData: "",
+              //
+              builder: (context, snapshot) {
+                //　TextのUIを作成
+                return Text(
+                  'RANDOM : ${snapshot.data}',
+                  style: Theme.of(context).textTheme.headline4,
+                );
+              },
             ),
           ],
         ),
