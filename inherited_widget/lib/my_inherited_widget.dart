@@ -3,12 +3,13 @@ import 'package:flutter/widgets.dart';
 class MyInheritedWidget extends InheritedWidget {
   final String message;
 
-  // コンストラクタでメッセージと子Widgetを取る
+  /// コンストラクタでメッセージと子Widgetを取る
   const MyInheritedWidget(
       {Key? key, required this.message, required Widget child})
       : super(key: key, child: child);
 
-  // O(1)でInheritedWidgetを返却
+  //直接アクセス。ハッシュ
+  /// O(1)でInheritedWidgetを返却
   static MyInheritedWidget of(BuildContext context) =>
       context.dependOnInheritedWidgetOfExactType<MyInheritedWidget>()
           as MyInheritedWidget;
