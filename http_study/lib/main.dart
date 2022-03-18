@@ -44,24 +44,29 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
+    return MaterialApp(
+      title: 'Fetch Data Example',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: const <Widget>[
-            Text(
-              'You have pushed the button this many times:',
-            ),
-          ],
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('Fetch Data Example'),
         ),
-      ),
-      floatingActionButton: const FloatingActionButton(
-        onPressed: fetchAlbum,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
+        body: Center(
+          child: FutureBuilder<Album>(
+            future: futureAlbum,
+            builder: (context, snapshot) {
+              if (snapshot.hasData) {
+                return Text(snapshot.data!.title);
+              } else if (snapshot.hasError) {
+                return Text('${snapshot.error}');
+              }
+              // By default, show a loading spinner.
+              return const CircularProgressIndicator();
+            },
+          ),
+        ),
       ),
     );
   }
