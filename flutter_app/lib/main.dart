@@ -11,8 +11,6 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  int _counter = 0;
-
   @override
   Widget build(BuildContext context) => MaterialApp(
       title: 'Flutter Demo',
@@ -21,27 +19,14 @@ class _MyAppState extends State<MyApp> {
       ),
       home: Scaffold(
         body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Text("You have pushed the button this many times:"),
-              Text(
-                '$_counter',
-                style: Theme.of(context).textTheme.headline4,
-              )
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Image.asset('images/sample_1.jpeg'),
+              Image.asset('images/sample_2.jpeg'),
+              Image.asset('images/sample_3.jpeg'),
             ],
           ),
         ),
-        floatingActionButton: FloatingActionButton(
-          tooltip: "increment",
-          onPressed: _incrementCounter,
-          child: Icon(Icons.add),
-        ),
       ));
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
 }
