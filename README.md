@@ -1,7 +1,5 @@
 # Flutterの勉強
 
-長いので、基本的なところをピックアップしています。
-
 概要|	Androidでは？|	Flutterでは？
 |-|-|-|
 View | View |	Widget
