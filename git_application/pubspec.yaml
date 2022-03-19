@@ -14,8 +14,10 @@ dependencies:
 
   cupertino_icons: ^1.0.2
 
-  ### https://pub.dev/packages/http
+  # https://pub.dev/packages/http
   http: ^0.13.4
+  # https://pub.dev/packages/json_annotation
+  json_annotation: ^4.4.0
 
 dev_dependencies:
   flutter_test:
