@@ -50,7 +50,26 @@ class _MyHomePageState extends State<MyHomePage> {
           future: futureGitUser,
           builder: (context, snapshot) {
             if (snapshot.hasData) {
-              return Text(snapshot.data![0].login);
+              return ListView.builder(
+                  // TODO　null許容で良いか確認
+                  itemCount: snapshot.data?.length,
+                  itemBuilder: (context, index) {
+                    return Row(children: [
+                      Image.network(
+                        // TODO　nullのキャスト対応
+                        snapshot.data![index].avatorUrl,
+                        width: 100,
+                      ),
+                      Text(
+                        // TODO　nullのキャスト対応
+                        snapshot.data![index].login,
+                        style: TextStyle(
+                          fontSize: 30,
+                          color: Theme.of(context).primaryColor,
+                        ),
+                      ),
+                    ]);
+                  });
             } else if (snapshot.hasError) {
               return Text('${snapshot.error}');
             }
