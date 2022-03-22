@@ -21,6 +21,10 @@ class _RepositoryListState extends State<RepositoryList> {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(widget.login),
+      ),
+    );
   }
 }

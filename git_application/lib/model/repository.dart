@@ -6,16 +6,16 @@ class Repository {
   final String createdAt;
 
   /// お気に入りの数
-  final String stargazersCount;
+  final int stargazersCount;
 
   /// 説明
-  final String description;
+  final String? description;
 
   /// 最終更新日時
   final String updatedAt;
 
   /// ライセンス
-  final String license;
+  final String? license;
 
   /// コンストラクタ
   const Repository({
