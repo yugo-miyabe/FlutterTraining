@@ -1,9 +1,9 @@
 class Licence {
   /// 名前
-  final String name;
+  final String? name;
 
   ///　リンク
-  final String url;
+  final String? url;
 
   /// コンストラクタ
   const Licence({
