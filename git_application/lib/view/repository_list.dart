@@ -65,7 +65,6 @@ Widget _listItem(Repository repository) {
               Text(
                 '作成日時: ' '${repository.createdAt}',
                 style: const TextStyle(fontSize: 15),
-                textAlign: TextAlign.left,
               ),
               Text(
                 '最終更新日時: ' '${repository.updatedAt}',
@@ -79,7 +78,6 @@ Widget _listItem(Repository repository) {
           ),
           Text(
             repository.stargazersCount.toString(),
-            textAlign: TextAlign.right,
           )
         ],
       ),
