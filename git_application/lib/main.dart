@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:git_application/model/git_user.dart';
-import 'package:git_application/repository/network_requset.dart';
+import 'package:git_application/repository/git_user_requset.dart';
 
 void main() {
   runApp(const MyApp());
