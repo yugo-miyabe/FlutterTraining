@@ -1,3 +1,5 @@
+import 'package:git_application/model/license.dart';
+
 class Repository {
   /// 名前
   final String name;
@@ -15,7 +17,7 @@ class Repository {
   final String updatedAt;
 
   /// ライセンス
-  final String? license;
+  final Licence? license;
 
   /// コンストラクタ
   const Repository({
