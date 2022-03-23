@@ -28,7 +28,15 @@ class _SideNavigationState extends State<SideNavigation> {
         NavigationRailDestination(
           icon: Icon(Icons.people),
           label: Text('people'),
-        )
+        ),
+        NavigationRailDestination(
+          icon: Icon(Icons.face),
+          label: Text('Face'),
+        ),
+        NavigationRailDestination(
+          icon: Icon(Icons.bookmark),
+          label: Text('bookmark'),
+        ),
       ],
     );
   }
