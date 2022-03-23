@@ -26,8 +26,11 @@ class Post extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
       child: Card(
+        //　影のサイズ
         elevation: 8,
+        // 影のカラーを指定
         shadowColor: Colors.grey,
+        // コーナー半径を指定
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8),
         ),

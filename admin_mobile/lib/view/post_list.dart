@@ -1,4 +1,3 @@
-import 'package:admin_mobile/view/post.dart';
 import 'package:admin_mobile/data/post_green.dart';
 import 'package:admin_mobile/data/post_red.dart';
 import 'package:admin_mobile/view/posts_header.dart';
@@ -10,7 +9,7 @@ class PostList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.only(top: 48),
+      padding: const EdgeInsets.only(top: 15),
       child: Column(
         mainAxisSize: MainAxisSize.max,
         children: [
