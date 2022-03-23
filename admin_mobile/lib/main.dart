@@ -1,4 +1,4 @@
-import 'package:admin_mobile/post.dart';
+import 'package:admin_mobile/view/post_list.dart';
 import 'package:admin_mobile/side_navigation.dart';
 import 'package:flutter/material.dart';
 
@@ -31,9 +31,9 @@ class AdminMobilePage extends StatelessWidget {
         title: const Text("Navigation Rail"),
       ),
       body: Row(
-        children: [
-          const SideNavigation(),
-          const VerticalDivider(thickness: 1, width: 1),
+        children: const [
+          SideNavigation(),
+          VerticalDivider(thickness: 1, width: 1),
           Expanded(
             child: PostList(),
           ),
