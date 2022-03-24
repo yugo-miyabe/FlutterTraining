@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:git_application/model/git_user.dart';
-import 'package:git_application/network_requset.dart';
+import 'package:git_application/repository/git_user_requset.dart';
+import 'package:git_application/view/repository_list.dart';
 
 void main() {
   runApp(const MyApp());
@@ -51,12 +52,16 @@ class _MyHomePageState extends State<MyHomePage> {
           builder: (context, snapshot) {
             if (snapshot.hasData) {
               return ListView.builder(
-                  // TODO　null許容で良いか確認
+                // TODO　null許容で良いか確認
                   itemCount: snapshot.data?.length,
                   itemBuilder: (context, index) {
                     return GestureDetector(
                       onTap: () {
-                        print("タップ");
+                        Navigator.push(
+                          context,
+                          // TODO　nullのキャスト対応
+                          MaterialPageRoute(builder: (context) => RepositoryList(snapshot.data![index].login)),
+                        );
                       },
                       child: Row(
                         children: [
@@ -70,7 +75,9 @@ class _MyHomePageState extends State<MyHomePage> {
                             snapshot.data![index].login,
                             style: TextStyle(
                               fontSize: 30,
-                              color: Theme.of(context).primaryColor,
+                              color: Theme
+                                  .of(context)
+                                  .primaryColor,
                             ),
                           ),
                         ],
