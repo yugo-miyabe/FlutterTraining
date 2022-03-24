@@ -2,6 +2,12 @@ class Repository {
   /// 名前
   final String name;
 
+  ///　フルネーム
+  final String fullName;
+
+  /// htmlのリンク
+  final String htmlUrl;
+
   /// 作成日時
   final String createdAt;
 
@@ -17,6 +23,8 @@ class Repository {
   /// コンストラクタ
   const Repository({
     required this.name,
+    required this.fullName,
+    required this.htmlUrl,
     required this.createdAt,
     required this.stargazersCount,
     required this.description,
@@ -27,6 +35,8 @@ class Repository {
   factory Repository.fromJson(Map<String, dynamic> json) {
     return Repository(
       name: json['name'],
+      fullName: json['full_name'],
+      htmlUrl: json['html_url'],
       createdAt: json['created_at'],
       stargazersCount: json['stargazers_count'],
       description: json['description'],
