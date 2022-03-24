@@ -52,7 +52,7 @@ class _MyHomePageState extends State<MyHomePage> {
           builder: (context, snapshot) {
             if (snapshot.hasData) {
               return ListView.builder(
-                // TODO　null許容で良いか確認
+                  // TODO　null許容で良いか確認
                   itemCount: snapshot.data?.length,
                   itemBuilder: (context, index) {
                     return GestureDetector(
@@ -60,27 +60,40 @@ class _MyHomePageState extends State<MyHomePage> {
                         Navigator.push(
                           context,
                           // TODO　nullのキャスト対応
-                          MaterialPageRoute(builder: (context) => RepositoryList(snapshot.data![index].login)),
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  RepositoryList(snapshot.data![index].login)),
                         );
                       },
-                      child: Row(
-                        children: [
-                          Image.network(
-                            // TODO　nullのキャスト対応
-                            snapshot.data![index].avatorUrl,
-                            width: 100,
-                          ),
-                          Text(
-                            // TODO　nullのキャスト対応
-                            snapshot.data![index].login,
-                            style: TextStyle(
-                              fontSize: 30,
-                              color: Theme
-                                  .of(context)
-                                  .primaryColor,
+                      child: Card(
+                        //　影のサイズ
+                        elevation: 8,
+                        // 影のカラーを指定
+                        shadowColor: Colors.grey,
+                        // コーナー半径を指定
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        child: Row(
+                          children: [
+                            Image.network(
+                              // TODO　nullのキャスト対応
+                              snapshot.data![index].avatorUrl,
+                              width: 100,
                             ),
-                          ),
-                        ],
+                            const SizedBox(width: 20),
+                            Expanded(
+                              child: Text(
+                                // TODO　nullのキャスト対応
+                                snapshot.data![index].login,
+                                style: TextStyle(
+                                  fontSize: 30,
+                                  color: Theme.of(context).primaryColor,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     );
                   });
