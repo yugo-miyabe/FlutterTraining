@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:freezed_study/user.dart';
 
@@ -36,7 +38,8 @@ class _MyHomePageState extends State<MyHomePage> {
     setState(() {
       _counter++;
     });
-    func();
+    //func();
+    func2();
   }
 
   @override
@@ -95,5 +98,17 @@ class _MyHomePageState extends State<MyHomePage> {
 
     // immutableを破壊するので、以下のような使い方はNG
     // user1.name = "unknown";
+  }
+
+  void func2() {
+    //String→Map→User
+    String jsonString = '{"name":"kazutxt","age":30}';
+    User fromJsonUser = User.fromJson(json.decode(jsonString));
+    print(fromJsonUser);
+
+    //User→Map→String
+    User toJsonUser = User('kazutxt2', 32);
+    Map<String, dynamic> jsonData = toJsonUser.toJson();
+    print(jsonData);
   }
 }
