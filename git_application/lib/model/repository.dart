@@ -1,3 +1,5 @@
+import 'package:git_application/model/license.dart';
+
 class Repository {
   /// 名前
   final String name;
@@ -20,6 +22,9 @@ class Repository {
   /// 最終更新日時
   final String updatedAt;
 
+  /// ライセンス
+  final License? license;
+
   /// コンストラクタ
   const Repository({
     required this.name,
@@ -29,6 +34,7 @@ class Repository {
     required this.stargazersCount,
     required this.description,
     required this.updatedAt,
+    required this.license,
   });
 
   /// ファクトリコンストラクタ
@@ -41,6 +47,8 @@ class Repository {
       stargazersCount: json['stargazers_count'],
       description: json['description'],
       updatedAt: json['updated_at'],
+      license:
+          json['license'] == null ? null : License.fromJson(json['license']),
     );
   }
 }

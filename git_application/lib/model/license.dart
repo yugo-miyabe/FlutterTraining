@@ -1,4 +1,4 @@
-class Licence {
+class License {
   /// 名前
   final String? name;
 
@@ -6,14 +6,14 @@ class Licence {
   final String? url;
 
   /// コンストラクタ
-  const Licence({
+  const License({
     required this.name,
     required this.url,
   });
 
   /// ファクトリコンストラクタ
-  factory Licence.fromJson(Map<String, dynamic> json) {
-    return Licence(
+  factory License.fromJson(Map<String, dynamic> json) {
+    return License(
       name: json['name'],
       url: json['url'],
     );
