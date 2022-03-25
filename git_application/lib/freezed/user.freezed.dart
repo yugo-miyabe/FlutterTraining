@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
-part of 'user.dart';
+part of '../user.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,15 +14,23 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
+User _$UserFromJson(Map<String, dynamic> json) {
+  return _User.fromJson(json);
+}
+
 /// @nodoc
 class _$UserTearOff {
   const _$UserTearOff();
 
-  _User call(String name, int age) {
+  _User call(String login, String avatar_url) {
     return _User(
-      name,
-      age,
+      login,
+      avatar_url,
     );
+  }
+
+  User fromJson(Map<String, Object?> json) {
+    return User.fromJson(json);
   }
 }
 
@@ -31,9 +39,10 @@ const $User = _$UserTearOff();
 
 /// @nodoc
 mixin _$User {
-  String get name => throw _privateConstructorUsedError;
-  int get age => throw _privateConstructorUsedError;
+  String get login => throw _privateConstructorUsedError;
+  String get avatar_url => throw _privateConstructorUsedError;
 
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $UserCopyWith<User> get copyWith => throw _privateConstructorUsedError;
 }
@@ -42,7 +51,7 @@ mixin _$User {
 abstract class $UserCopyWith<$Res> {
   factory $UserCopyWith(User value, $Res Function(User) then) =
       _$UserCopyWithImpl<$Res>;
-  $Res call({String name, int age});
+  $Res call({String login, String avatar_url});
 }
 
 /// @nodoc
@@ -55,18 +64,18 @@ class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
 
   @override
   $Res call({
-    Object? name = freezed,
-    Object? age = freezed,
+    Object? login = freezed,
+    Object? avatar_url = freezed,
   }) {
     return _then(_value.copyWith(
-      name: name == freezed
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
+      login: login == freezed
+          ? _value.login
+          : login // ignore: cast_nullable_to_non_nullable
               as String,
-      age: age == freezed
-          ? _value.age
-          : age // ignore: cast_nullable_to_non_nullable
-              as int,
+      avatar_url: avatar_url == freezed
+          ? _value.avatar_url
+          : avatar_url // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -76,7 +85,7 @@ abstract class _$UserCopyWith<$Res> implements $UserCopyWith<$Res> {
   factory _$UserCopyWith(_User value, $Res Function(_User) then) =
       __$UserCopyWithImpl<$Res>;
   @override
-  $Res call({String name, int age});
+  $Res call({String login, String avatar_url});
 }
 
 /// @nodoc
@@ -90,35 +99,37 @@ class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? name = freezed,
-    Object? age = freezed,
+    Object? login = freezed,
+    Object? avatar_url = freezed,
   }) {
     return _then(_User(
-      name == freezed
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
+      login == freezed
+          ? _value.login
+          : login // ignore: cast_nullable_to_non_nullable
               as String,
-      age == freezed
-          ? _value.age
-          : age // ignore: cast_nullable_to_non_nullable
-              as int,
+      avatar_url == freezed
+          ? _value.avatar_url
+          : avatar_url // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
 /// @nodoc
-
+@JsonSerializable()
 class _$_User with DiagnosticableTreeMixin implements _User {
-  const _$_User(this.name, this.age);
+  const _$_User(this.login, this.avatar_url);
+
+  factory _$_User.fromJson(Map<String, dynamic> json) => _$$_UserFromJson(json);
 
   @override
-  final String name;
+  final String login;
   @override
-  final int age;
+  final String avatar_url;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'User(name: $name, age: $age)';
+    return 'User(login: $login, avatar_url: $avatar_url)';
   }
 
   @override
@@ -126,8 +137,8 @@ class _$_User with DiagnosticableTreeMixin implements _User {
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'User'))
-      ..add(DiagnosticsProperty('name', name))
-      ..add(DiagnosticsProperty('age', age));
+      ..add(DiagnosticsProperty('login', login))
+      ..add(DiagnosticsProperty('avatar_url', avatar_url));
   }
 
   @override
@@ -135,29 +146,37 @@ class _$_User with DiagnosticableTreeMixin implements _User {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _User &&
-            const DeepCollectionEquality().equals(other.name, name) &&
-            const DeepCollectionEquality().equals(other.age, age));
+            const DeepCollectionEquality().equals(other.login, login) &&
+            const DeepCollectionEquality()
+                .equals(other.avatar_url, avatar_url));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(name),
-      const DeepCollectionEquality().hash(age));
+      const DeepCollectionEquality().hash(login),
+      const DeepCollectionEquality().hash(avatar_url));
 
   @JsonKey(ignore: true)
   @override
   _$UserCopyWith<_User> get copyWith =>
       __$UserCopyWithImpl<_User>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_UserToJson(this);
+  }
 }
 
 abstract class _User implements User {
-  const factory _User(String name, int age) = _$_User;
+  const factory _User(String login, String avatar_url) = _$_User;
+
+  factory _User.fromJson(Map<String, dynamic> json) = _$_User.fromJson;
 
   @override
-  String get name;
+  String get login;
   @override
-  int get age;
+  String get avatar_url;
   @override
   @JsonKey(ignore: true)
   _$UserCopyWith<_User> get copyWith => throw _privateConstructorUsedError;
