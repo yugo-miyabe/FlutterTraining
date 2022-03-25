@@ -19,7 +19,7 @@ dependencies:
   # https://pub.dev/packages/json_annotation
   json_annotation: ^4.4.0
   # https://pub.dev/packages/webview_flutter
-  webview_flutter: ^3.0.1
+  webview_flutter:
 
 dev_dependencies:
   flutter_test:
