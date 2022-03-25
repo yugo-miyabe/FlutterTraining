@@ -12,6 +12,8 @@ dependencies:
   # https://pub.dev/packages/freezed_annotation
   freezed_annotation:
 
+  json_serializable:
+
   flutter:
     sdk: flutter
 
