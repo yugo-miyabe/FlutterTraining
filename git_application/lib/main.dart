@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:git_application/model/git_user.dart';
 import 'package:git_application/repository/git_user_requset.dart';
+import 'package:git_application/user.dart';
 import 'package:git_application/view/repository_list.dart';
 
 void main() {
@@ -32,7 +32,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  late Future<List<GitUser>> futureGitUser;
+  late Future<List<User>> futureGitUser;
 
   @override
   void initState() {
@@ -47,7 +47,7 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Center(
-        child: FutureBuilder<List<GitUser>>(
+        child: FutureBuilder<List<User>>(
           future: futureGitUser,
           builder: (context, snapshot) {
             if (snapshot.hasData) {
@@ -78,7 +78,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           children: [
                             Image.network(
                               // TODO　nullのキャスト対応
-                              snapshot.data![index].avatorUrl,
+                              snapshot.data![index].avatar_url,
                               width: 100,
                             ),
                             const SizedBox(width: 20),
