@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:git_application/model/repository.dart';
+import 'package:git_application/view/web_view_screen.dart';
 
 class RepositoryListItem extends StatelessWidget {
   const RepositoryListItem(this.repository, {Key? key}) : super(key: key);
@@ -50,6 +51,24 @@ class RepositoryListItem extends StatelessWidget {
               padding: const EdgeInsets.only(left: 50),
               margin: const EdgeInsets.all(5),
               child: Text('最終更新日:' + repository.updatedAt),
+            ),
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute<WebViewScreen>(
+                    builder: (context) => WebViewScreen(repository.htmlUrl),
+                  ),
+                );
+              },
+              child: Container(
+                margin: const EdgeInsets.all(15),
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  repository.htmlUrl,
+                  style: const TextStyle(color: Colors.cyan),
+                ),
+              ),
             ),
           ],
         ),
