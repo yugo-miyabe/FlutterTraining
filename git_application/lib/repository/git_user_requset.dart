@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:git_application/user.dart';
+import 'package:git_application/model/user.dart';
 import 'package:http/http.dart' as http;
 
 Future<List<User>> fetchGitUser() async {

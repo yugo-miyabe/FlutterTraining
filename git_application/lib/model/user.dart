@@ -1,9 +1,9 @@
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'freezed/user.freezed.dart';
+part '../freezed/user.freezed.dart';
 
-part 'freezed/user.g.dart';
+part '../freezed/user.g.dart';
 
 @freezed
 class User with _$User {

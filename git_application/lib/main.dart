@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:git_application/repository/git_user_requset.dart';
-import 'package:git_application/user.dart';
+import 'package:git_application/model/user.dart';
 import 'package:git_application/view/repository_list.dart';
 
 void main() {
