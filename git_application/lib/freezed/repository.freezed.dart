@@ -24,19 +24,19 @@ class _$RepositoryTearOff {
 
   _Repository call(
       String name,
-      String fullName,
-      String htmlUrl,
-      String createdAt,
-      String updatedAt,
-      String stargazersCount,
-      String description) {
+      String full_name,
+      String html_url,
+      String created_at,
+      String updated_at,
+      int stargazers_count,
+      String? description) {
     return _Repository(
       name,
-      fullName,
-      htmlUrl,
-      createdAt,
-      updatedAt,
-      stargazersCount,
+      full_name,
+      html_url,
+      created_at,
+      updated_at,
+      stargazers_count,
       description,
     );
   }
@@ -52,12 +52,12 @@ const $Repository = _$RepositoryTearOff();
 /// @nodoc
 mixin _$Repository {
   String get name => throw _privateConstructorUsedError;
-  String get fullName => throw _privateConstructorUsedError;
-  String get htmlUrl => throw _privateConstructorUsedError;
-  String get createdAt => throw _privateConstructorUsedError;
-  String get updatedAt => throw _privateConstructorUsedError;
-  String get stargazersCount => throw _privateConstructorUsedError;
-  String get description => throw _privateConstructorUsedError;
+  String get full_name => throw _privateConstructorUsedError;
+  String get html_url => throw _privateConstructorUsedError;
+  String get created_at => throw _privateConstructorUsedError;
+  String get updated_at => throw _privateConstructorUsedError;
+  int get stargazers_count => throw _privateConstructorUsedError;
+  String? get description => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -72,12 +72,12 @@ abstract class $RepositoryCopyWith<$Res> {
       _$RepositoryCopyWithImpl<$Res>;
   $Res call(
       {String name,
-      String fullName,
-      String htmlUrl,
-      String createdAt,
-      String updatedAt,
-      String stargazersCount,
-      String description});
+      String full_name,
+      String html_url,
+      String created_at,
+      String updated_at,
+      int stargazers_count,
+      String? description});
 }
 
 /// @nodoc
@@ -91,11 +91,11 @@ class _$RepositoryCopyWithImpl<$Res> implements $RepositoryCopyWith<$Res> {
   @override
   $Res call({
     Object? name = freezed,
-    Object? fullName = freezed,
-    Object? htmlUrl = freezed,
-    Object? createdAt = freezed,
-    Object? updatedAt = freezed,
-    Object? stargazersCount = freezed,
+    Object? full_name = freezed,
+    Object? html_url = freezed,
+    Object? created_at = freezed,
+    Object? updated_at = freezed,
+    Object? stargazers_count = freezed,
     Object? description = freezed,
   }) {
     return _then(_value.copyWith(
@@ -103,30 +103,30 @@ class _$RepositoryCopyWithImpl<$Res> implements $RepositoryCopyWith<$Res> {
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      fullName: fullName == freezed
-          ? _value.fullName
-          : fullName // ignore: cast_nullable_to_non_nullable
+      full_name: full_name == freezed
+          ? _value.full_name
+          : full_name // ignore: cast_nullable_to_non_nullable
               as String,
-      htmlUrl: htmlUrl == freezed
-          ? _value.htmlUrl
-          : htmlUrl // ignore: cast_nullable_to_non_nullable
+      html_url: html_url == freezed
+          ? _value.html_url
+          : html_url // ignore: cast_nullable_to_non_nullable
               as String,
-      createdAt: createdAt == freezed
-          ? _value.createdAt
-          : createdAt // ignore: cast_nullable_to_non_nullable
+      created_at: created_at == freezed
+          ? _value.created_at
+          : created_at // ignore: cast_nullable_to_non_nullable
               as String,
-      updatedAt: updatedAt == freezed
-          ? _value.updatedAt
-          : updatedAt // ignore: cast_nullable_to_non_nullable
+      updated_at: updated_at == freezed
+          ? _value.updated_at
+          : updated_at // ignore: cast_nullable_to_non_nullable
               as String,
-      stargazersCount: stargazersCount == freezed
-          ? _value.stargazersCount
-          : stargazersCount // ignore: cast_nullable_to_non_nullable
-              as String,
+      stargazers_count: stargazers_count == freezed
+          ? _value.stargazers_count
+          : stargazers_count // ignore: cast_nullable_to_non_nullable
+              as int,
       description: description == freezed
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -139,12 +139,12 @@ abstract class _$RepositoryCopyWith<$Res> implements $RepositoryCopyWith<$Res> {
   @override
   $Res call(
       {String name,
-      String fullName,
-      String htmlUrl,
-      String createdAt,
-      String updatedAt,
-      String stargazersCount,
-      String description});
+      String full_name,
+      String html_url,
+      String created_at,
+      String updated_at,
+      int stargazers_count,
+      String? description});
 }
 
 /// @nodoc
@@ -160,11 +160,11 @@ class __$RepositoryCopyWithImpl<$Res> extends _$RepositoryCopyWithImpl<$Res>
   @override
   $Res call({
     Object? name = freezed,
-    Object? fullName = freezed,
-    Object? htmlUrl = freezed,
-    Object? createdAt = freezed,
-    Object? updatedAt = freezed,
-    Object? stargazersCount = freezed,
+    Object? full_name = freezed,
+    Object? html_url = freezed,
+    Object? created_at = freezed,
+    Object? updated_at = freezed,
+    Object? stargazers_count = freezed,
     Object? description = freezed,
   }) {
     return _then(_Repository(
@@ -172,30 +172,30 @@ class __$RepositoryCopyWithImpl<$Res> extends _$RepositoryCopyWithImpl<$Res>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      fullName == freezed
-          ? _value.fullName
-          : fullName // ignore: cast_nullable_to_non_nullable
+      full_name == freezed
+          ? _value.full_name
+          : full_name // ignore: cast_nullable_to_non_nullable
               as String,
-      htmlUrl == freezed
-          ? _value.htmlUrl
-          : htmlUrl // ignore: cast_nullable_to_non_nullable
+      html_url == freezed
+          ? _value.html_url
+          : html_url // ignore: cast_nullable_to_non_nullable
               as String,
-      createdAt == freezed
-          ? _value.createdAt
-          : createdAt // ignore: cast_nullable_to_non_nullable
+      created_at == freezed
+          ? _value.created_at
+          : created_at // ignore: cast_nullable_to_non_nullable
               as String,
-      updatedAt == freezed
-          ? _value.updatedAt
-          : updatedAt // ignore: cast_nullable_to_non_nullable
+      updated_at == freezed
+          ? _value.updated_at
+          : updated_at // ignore: cast_nullable_to_non_nullable
               as String,
-      stargazersCount == freezed
-          ? _value.stargazersCount
-          : stargazersCount // ignore: cast_nullable_to_non_nullable
-              as String,
+      stargazers_count == freezed
+          ? _value.stargazers_count
+          : stargazers_count // ignore: cast_nullable_to_non_nullable
+              as int,
       description == freezed
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -203,8 +203,8 @@ class __$RepositoryCopyWithImpl<$Res> extends _$RepositoryCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_Repository with DiagnosticableTreeMixin implements _Repository {
-  const _$_Repository(this.name, this.fullName, this.htmlUrl, this.createdAt,
-      this.updatedAt, this.stargazersCount, this.description);
+  const _$_Repository(this.name, this.full_name, this.html_url, this.created_at,
+      this.updated_at, this.stargazers_count, this.description);
 
   factory _$_Repository.fromJson(Map<String, dynamic> json) =>
       _$$_RepositoryFromJson(json);
@@ -212,21 +212,21 @@ class _$_Repository with DiagnosticableTreeMixin implements _Repository {
   @override
   final String name;
   @override
-  final String fullName;
+  final String full_name;
   @override
-  final String htmlUrl;
+  final String html_url;
   @override
-  final String createdAt;
+  final String created_at;
   @override
-  final String updatedAt;
+  final String updated_at;
   @override
-  final String stargazersCount;
+  final int stargazers_count;
   @override
-  final String description;
+  final String? description;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'Repository(name: $name, fullName: $fullName, htmlUrl: $htmlUrl, createdAt: $createdAt, updatedAt: $updatedAt, stargazersCount: $stargazersCount, description: $description)';
+    return 'Repository(name: $name, full_name: $full_name, html_url: $html_url, created_at: $created_at, updated_at: $updated_at, stargazers_count: $stargazers_count, description: $description)';
   }
 
   @override
@@ -235,11 +235,11 @@ class _$_Repository with DiagnosticableTreeMixin implements _Repository {
     properties
       ..add(DiagnosticsProperty('type', 'Repository'))
       ..add(DiagnosticsProperty('name', name))
-      ..add(DiagnosticsProperty('fullName', fullName))
-      ..add(DiagnosticsProperty('htmlUrl', htmlUrl))
-      ..add(DiagnosticsProperty('createdAt', createdAt))
-      ..add(DiagnosticsProperty('updatedAt', updatedAt))
-      ..add(DiagnosticsProperty('stargazersCount', stargazersCount))
+      ..add(DiagnosticsProperty('full_name', full_name))
+      ..add(DiagnosticsProperty('html_url', html_url))
+      ..add(DiagnosticsProperty('created_at', created_at))
+      ..add(DiagnosticsProperty('updated_at', updated_at))
+      ..add(DiagnosticsProperty('stargazers_count', stargazers_count))
       ..add(DiagnosticsProperty('description', description));
   }
 
@@ -249,12 +249,14 @@ class _$_Repository with DiagnosticableTreeMixin implements _Repository {
         (other.runtimeType == runtimeType &&
             other is _Repository &&
             const DeepCollectionEquality().equals(other.name, name) &&
-            const DeepCollectionEquality().equals(other.fullName, fullName) &&
-            const DeepCollectionEquality().equals(other.htmlUrl, htmlUrl) &&
-            const DeepCollectionEquality().equals(other.createdAt, createdAt) &&
-            const DeepCollectionEquality().equals(other.updatedAt, updatedAt) &&
+            const DeepCollectionEquality().equals(other.full_name, full_name) &&
+            const DeepCollectionEquality().equals(other.html_url, html_url) &&
             const DeepCollectionEquality()
-                .equals(other.stargazersCount, stargazersCount) &&
+                .equals(other.created_at, created_at) &&
+            const DeepCollectionEquality()
+                .equals(other.updated_at, updated_at) &&
+            const DeepCollectionEquality()
+                .equals(other.stargazers_count, stargazers_count) &&
             const DeepCollectionEquality()
                 .equals(other.description, description));
   }
@@ -263,11 +265,11 @@ class _$_Repository with DiagnosticableTreeMixin implements _Repository {
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(name),
-      const DeepCollectionEquality().hash(fullName),
-      const DeepCollectionEquality().hash(htmlUrl),
-      const DeepCollectionEquality().hash(createdAt),
-      const DeepCollectionEquality().hash(updatedAt),
-      const DeepCollectionEquality().hash(stargazersCount),
+      const DeepCollectionEquality().hash(full_name),
+      const DeepCollectionEquality().hash(html_url),
+      const DeepCollectionEquality().hash(created_at),
+      const DeepCollectionEquality().hash(updated_at),
+      const DeepCollectionEquality().hash(stargazers_count),
       const DeepCollectionEquality().hash(description));
 
   @JsonKey(ignore: true)
@@ -284,12 +286,12 @@ class _$_Repository with DiagnosticableTreeMixin implements _Repository {
 abstract class _Repository implements Repository {
   const factory _Repository(
       String name,
-      String fullName,
-      String htmlUrl,
-      String createdAt,
-      String updatedAt,
-      String stargazersCount,
-      String description) = _$_Repository;
+      String full_name,
+      String html_url,
+      String created_at,
+      String updated_at,
+      int stargazers_count,
+      String? description) = _$_Repository;
 
   factory _Repository.fromJson(Map<String, dynamic> json) =
       _$_Repository.fromJson;
@@ -297,17 +299,17 @@ abstract class _Repository implements Repository {
   @override
   String get name;
   @override
-  String get fullName;
+  String get full_name;
   @override
-  String get htmlUrl;
+  String get html_url;
   @override
-  String get createdAt;
+  String get created_at;
   @override
-  String get updatedAt;
+  String get updated_at;
   @override
-  String get stargazersCount;
+  int get stargazers_count;
   @override
-  String get description;
+  String? get description;
   @override
   @JsonKey(ignore: true)
   _$RepositoryCopyWith<_Repository> get copyWith =>

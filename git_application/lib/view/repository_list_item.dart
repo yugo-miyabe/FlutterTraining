@@ -26,7 +26,7 @@ class RepositoryListItem extends StatelessWidget {
                   height: 38,
                   child: Center(
                     child: Text(
-                      repository.fullName.substring(0, 1),
+                      repository.full_name.substring(0, 1),
                       style: const TextStyle(color: Colors.white, fontSize: 20),
                     ),
                   ),
@@ -44,20 +44,20 @@ class RepositoryListItem extends StatelessWidget {
               alignment: Alignment.centerLeft,
               padding: const EdgeInsets.only(left: 50),
               margin: const EdgeInsets.all(5),
-              child: Text('作成日時:' + repository.createdAt),
+              child: Text('作成日時:' + repository.created_at),
             ),
             Container(
               alignment: Alignment.centerLeft,
               padding: const EdgeInsets.only(left: 50),
               margin: const EdgeInsets.all(5),
-              child: Text('最終更新日:' + repository.updatedAt),
+              child: Text('最終更新日:' + repository.updated_at),
             ),
             GestureDetector(
               onTap: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute<WebViewScreen>(
-                    builder: (context) => WebViewScreen(repository.htmlUrl),
+                    builder: (context) => WebViewScreen(repository.html_url),
                   ),
                 );
               },
@@ -65,7 +65,7 @@ class RepositoryListItem extends StatelessWidget {
                 margin: const EdgeInsets.all(15),
                 alignment: Alignment.centerLeft,
                 child: Text(
-                  repository.htmlUrl,
+                  repository.html_url,
                   style: const TextStyle(color: Colors.cyan),
                 ),
               ),
