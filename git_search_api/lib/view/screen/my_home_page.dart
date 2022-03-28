@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:git_search_api/view/repository.dart';
 import 'package:git_search_api/view/favorites.dart';
-import 'package:git_search_api/view/search.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key, required this.title}) : super(key: key);
