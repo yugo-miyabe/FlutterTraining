@@ -1,3 +1,5 @@
+import 'package:bottom_navigation/view/screen/favorites.dart';
+import 'package:bottom_navigation/view/screen/search.dart';
 import 'package:flutter/material.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -11,6 +13,10 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _selectedIndex = 0;
+  final _pages = <Widget>[
+    Search(),
+    Favorites(),
+  ];
 
   void _onItemTapped(int index) {
     setState(() {
@@ -25,12 +31,7 @@ class _MyHomePageState extends State<MyHomePage> {
         centerTitle: true, // 中央寄せを設定
         title: const Text('Search'),
       ),
-      body: Center(
-        child: Text(
-          "indexNum: $_selectedIndex",
-          style: const TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
-        ),
-      ),
+      body: _pages[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
