@@ -1,13 +1,8 @@
 import 'package:flutter/material.dart';
 
-class Repository extends StatefulWidget {
+class Repository extends StatelessWidget {
   const Repository({Key? key}) : super(key: key);
 
-  @override
-  State<Repository> createState() => _RepositoryState();
-}
-
-class _RepositoryState extends State<Repository> {
   @override
   Widget build(BuildContext context) {
     String? searchText;
@@ -28,6 +23,7 @@ class _RepositoryState extends State<Repository> {
           const SizedBox(height: 20),
           ElevatedButton(
             onPressed: () {
+              // TODO null　対応
               print(searchText);
             },
             child: const Text('Search'),
@@ -37,37 +33,3 @@ class _RepositoryState extends State<Repository> {
     );
   }
 }
-
-/*
-class Repository extends StatelessWidget {
-  const Repository({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    String searchText;
-
-    return Container(
-      padding: const EdgeInsets.all(60),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          const TextField(
-            decoration: InputDecoration(
-              border: OutlineInputBorder(),
-            ),
-            onChanged: (text){
-            },
-          ),
-
-          const SizedBox(height: 20),
-          ElevatedButton(
-            onPressed: () {},
-            child: const Text('Search'),
-          )
-        ],
-      ),
-    );
-  }
-}
-
- */
