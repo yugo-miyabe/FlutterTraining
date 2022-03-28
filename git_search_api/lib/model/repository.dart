@@ -2,10 +2,8 @@ import 'package:git_search_api/model/items.dart';
 
 class Repository {
   final int totalCount;
-
   final bool incompleteResults;
-
-  final Item items;
+  final List<Item> items;
 
   const Repository({
     required this.totalCount,
@@ -14,10 +12,14 @@ class Repository {
   });
 
   factory Repository.fromJson(Map<String, dynamic> json) {
+    var itemFromJson = json['items'];
+    // リストにキャスト
+    List<Item> itemList = itemFromJson.cast<Item>();
+
     return Repository(
-        totalCount: json['total_count'],
-        incompleteResults: json['incomplete_results'],
-        items: Item.fromJson(json['items']),
+      totalCount: json['total_count'],
+      incompleteResults: json['incomplete_results'],
+      items: itemList,
     );
   }
 }
