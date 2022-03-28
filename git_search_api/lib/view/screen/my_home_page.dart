@@ -14,7 +14,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _selectedIndex = 0;
   final _pages = <Widget>[
-    Search(),
+    Repository(),
     Favorites(),
   ];
 
@@ -38,7 +38,7 @@ class _MyHomePageState extends State<MyHomePage> {
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.search),
-            label: 'search',
+            label: 'Repository',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.favorite),
