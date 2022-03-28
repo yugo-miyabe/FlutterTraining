@@ -22,6 +22,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true, // 中央寄せを設定
         title: const Text('Search'),
       ),
       body: Center(
