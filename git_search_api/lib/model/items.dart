@@ -9,6 +9,10 @@ class Item {
 
   final Owner owner;
 
+  final String htmlUrl;
+
+  final String? description;
+
   final String language;
 
   final int stargazersCount;
@@ -16,9 +20,11 @@ class Item {
   /// コンストラクタ
   const Item({
     required this.id,
+    required this.name,
     required this.fullName,
     required this.owner,
-    required this.name,
+    required this.htmlUrl,
+    required this.description,
     required this.language,
     required this.stargazersCount,
   });
@@ -27,9 +33,11 @@ class Item {
   factory Item.fromJson(Map<String, dynamic> json) {
     return Item(
       id: json['id'],
+      name: json['name'],
       fullName: json['full_name'],
       owner: Owner.fromJson(json['owner']),
-      name: json['name'],
+      htmlUrl: json['html_url'],
+      description: json['description'],
       language: json['language'],
       stargazersCount: json['stargazers_count'],
     );
