@@ -1,20 +1,20 @@
 class Repository {
   /// 検索結果のカウント
-  final String totalCount;
+  final int totalCount;
 
-  ///
-  final bool incompleteResultsx;
+  ///不完全な結果
+  final bool incompleteResults;
 
   /// コンストラクタ
   const Repository({
     required this.totalCount,
-    required this.incompleteResultsx,
+    required this.incompleteResults,
   });
 
   /// ファクトリコンストラクタ
   factory Repository.fromJson(Map<String, dynamic> json) {
     return Repository(
         totalCount: json['total_count'],
-        incompleteResultsx: json['incomplete_resultsx']);
+        incompleteResults: json['incomplete_results']);
   }
 }
