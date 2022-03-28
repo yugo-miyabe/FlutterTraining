@@ -5,11 +5,17 @@ class Repository extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return Container(
+      padding: const EdgeInsets.all(60),
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          TextField(
+          const TextField(
+            decoration: InputDecoration(
+              border: OutlineInputBorder(),
+            ),
           ),
+          const SizedBox(height: 20),
           ElevatedButton(
             onPressed: () {},
             child: const Text('Search'),
