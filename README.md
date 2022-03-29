@@ -31,7 +31,7 @@ GPSセンサーを使用するには？	| |	geolocatorプラグイン
 Facebookログイン	| |	flutter_facebook_loginプラグイン
 Firebase機能を使うには	| |	各公式プラグイン
 NDKを使用するには？	|  | FlutterとAndroidでやりとり
-テーマ	XML	|  |　 MaterialAppのThemeData
+テーマ	XML	|  |　MaterialAppのThemeData
 Shared Preferences |	SharedPreferences	| Shared_Preferencesプラグイン
 SQLite	| SQLite	| SQFliteプラグイン
 プッシュ通知| 	|	Firebase Cloud Messagingをfirebase_messagingプラグインで
