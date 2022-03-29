@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:git_search_api/view/screen/repository_list.dart';
 
-class Repository extends StatelessWidget {
-  const Repository({Key? key}) : super(key: key);
+class RepositoryWidget extends StatelessWidget {
+  const RepositoryWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

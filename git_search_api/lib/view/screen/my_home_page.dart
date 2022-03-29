@@ -14,8 +14,8 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _selectedIndex = 0;
   final _pages = <Widget>[
-    Repository(),
-    Favorites(),
+    RepositoryWidget(),
+    FavoritesWidget(),
   ];
   final _title = <String>[
     'Search',
