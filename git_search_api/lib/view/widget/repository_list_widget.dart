@@ -18,6 +18,9 @@ class RepositoryListWidget extends StatelessWidget {
         child: Column(
           children: [
             ListTile(
+              leading: Image.network(
+                item.owner.avatarUrl!,
+              ),
               title: Text(item.name),
             )
           ],

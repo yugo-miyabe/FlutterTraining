@@ -28,13 +28,16 @@ class _RepositoryListState extends State<RepositoryList> {
       builder: (context, response) {
         if (response.hasData) {
           return ListView.builder(
-              itemCount: response.data?.items.length,
-              itemBuilder: (context, index) {
-                var items = response.data!.items;
-                return RepositoryListWidget(items[index]);
-              });
+            itemCount: response.data?.items.length,
+            itemBuilder: (context, index) {
+              var items = response.data!.items;
+              return RepositoryListWidget(items[index]);
+            },
+          );
         } else if (response.hasError) {
-          return Text('${response.error}');
+          return Text(
+            '${response.error}',
+          );
         }
         return const CircularProgressIndicator();
       },
