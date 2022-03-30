@@ -37,7 +37,7 @@ class _RepositoryWidgetState extends State<RepositoryWidget> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => RepositoryList(searchText!),
+                        builder: (context) => RepositoryList(searchText),
                       ),
                     );
                   }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:git_search_api/model/repository.dart';
 import 'package:git_search_api/repository/get_repository_request.dart';
+import 'package:git_search_api/view/widget/repository_list_widget.dart';
 
 class RepositoryList extends StatefulWidget {
   const RepositoryList(this.searchText, {Key? key}) : super(key: key);
@@ -22,7 +23,20 @@ class _RepositoryListState extends State<RepositoryList> {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Text(widget.searchText),
-    );
+        child: FutureBuilder<Repository>(
+      future: futureRepository,
+      builder: (context, response) {
+        if (response.hasData) {
+          return ListView.builder(
+              itemCount: response.data?.items.length,
+              itemBuilder: (context, index) {
+                return RepositoryListWidget(response.data!.items[index]);
+              });
+        } else if (response.hasError) {
+          return Text('${response.error}');
+        }
+        return const CircularProgressIndicator();
+      },
+    ));
   }
 }
