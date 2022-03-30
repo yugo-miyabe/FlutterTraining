@@ -7,6 +7,22 @@ class RepositoryListWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Container(
+      margin: const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
+      child: Card(
+        elevation: 8,
+        shadowColor: Colors.grey,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(8),
+        ),
+        child: Column(
+          children: [
+            ListTile(
+              title: Text(item.name),
+            )
+          ],
+        ),
+      ),
+    );
   }
 }

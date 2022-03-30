@@ -30,7 +30,8 @@ class _RepositoryListState extends State<RepositoryList> {
           return ListView.builder(
               itemCount: response.data?.items.length,
               itemBuilder: (context, index) {
-                return RepositoryListWidget(response.data!.items[index]);
+                var items = response.data!.items;
+                return RepositoryListWidget(items[index]);
               });
         } else if (response.hasError) {
           return Text('${response.error}');
