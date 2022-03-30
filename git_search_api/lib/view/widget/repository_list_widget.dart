@@ -21,7 +21,11 @@ class RepositoryListWidget extends StatelessWidget {
               leading: Image.network(
                 item.owner.avatarUrl!,
               ),
-              title: Text(item.name),
+              title: Text(item.fullName),
+              subtitle: Visibility(
+                visible: item.language.toString().isNotEmpty,
+                child: Text(item.language.toString()),
+              ),
             )
           ],
         ),
