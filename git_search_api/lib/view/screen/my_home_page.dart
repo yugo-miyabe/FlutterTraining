@@ -1,26 +1,29 @@
 import 'package:flutter/material.dart';
-import 'package:git_search_api/view/widget/repository_widget.dart';
 import 'package:git_search_api/view/widget/favorites_widget.dart';
+import 'package:git_search_api/view/widget/repository_widget.dart';
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
-
-  final String title;
+  const MyHomePage({Key? key}) : super(key: key);
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _selectedIndex = 0;
+  int _bottomBarIndex = 0;
   final _pages = <Widget>[
-    Repository(),
-    Favorites(),
+    const RepositoryWidget(),
+    const FavoritesWidget(),
+  ];
+
+  final _title = <String>[
+    'Search',
+    'Favorite',
   ];
 
   void _onItemTapped(int index) {
     setState(() {
-      _selectedIndex = index;
+      _bottomBarIndex = index;
     });
   }
 
@@ -29,11 +32,11 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: const Text('Search'),
+        title: Text(_title[_bottomBarIndex]),
       ),
-      body: _pages[_selectedIndex],
+      body: _pages[_bottomBarIndex],
       bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _selectedIndex,
+        currentIndex: _bottomBarIndex,
         onTap: _onItemTapped,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(

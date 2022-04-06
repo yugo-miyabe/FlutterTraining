@@ -12,14 +12,13 @@ class Repository {
   });
 
   factory Repository.fromJson(Map<String, dynamic> json) {
-    var itemFromJson = json['items'];
-    // リストにキャスト
-    List<Item> itemList = itemFromJson.cast<Item>();
+    var itemList = json['items'] as List;
+    List<Item> itemsList = itemList.map((i) => Item.fromJson(i)).toList();
 
     return Repository(
       totalCount: json['total_count'],
       incompleteResults: json['incomplete_results'],
-      items: itemList,
+      items: itemsList,
     );
   }
 }

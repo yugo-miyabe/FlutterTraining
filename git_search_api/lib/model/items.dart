@@ -13,7 +13,7 @@ class Item {
 
   final String? description;
 
-  final String language;
+  final String? language;
 
   final int stargazersCount;
 
