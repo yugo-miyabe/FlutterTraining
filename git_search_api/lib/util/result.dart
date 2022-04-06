@@ -1,3 +1,5 @@
+import 'package:git_search_api/exception/app_exception.dart';
+
 abstract class Result<T> {
   Result.success(T value) {
     Success(value);
@@ -21,5 +23,3 @@ class Failure<T> implements Result<T> {
 
   Failure(this.exception);
 }
-
-abstract class AppException {}
